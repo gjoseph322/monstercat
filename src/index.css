@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html{
+  @apply h-full m-0;
+}
+
+body{
+  @apply relative min-h-[100vh] p-0 m-0
+  bg-[url(https://storage.googleapis.com/monstercat/background-tile.webp)] 
+       bg-repeat   ;
+  
+}
+
+:root {
+ 
+  @apply font-sans leading-relaxed font-light ;
+  
+}
+
+#root{
+    @apply  min-h-full m-0;
+}
+
+header .social-media ul li svg {
+  @apply h-5 w-[22px];
+}
+
+.social-media{
+  @apply absolute min-[1185px]:right-0 min-[1185px]:top-[100%] min-[1185px]:py-12 left-1/2 -translate-x-1/2 
+  min-[1185px]:left-auto min-[1185px]:translate-x-0 top-1/2 -translate-y-1/2 min-[1185px]:translate-y-0 max-[532px]:hidden;
+}
+
+.icons-wrapper{
+  @apply w-[22px] gap-[18px] min-[1185px]:w-auto min-[1185px]:gap-0 ;
+}
+
+ul li svg{
+  @apply cursor-pointer;
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: url('/fonts/MonumentExtended-Regular.woff2');
+    font-weight: 400;
+}
+
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: url('/fonts/MonumentExtended-UltraBold.woff2');
+    font-weight: 600;
+
+}
+
+.stroke-tittle-album {
+  /* grosor y color del borde */
+  -webkit-text-stroke-color: #F1F1F1;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+}
+
+.general-fonts-port {
+    @apply font-['Monument_Extended',Helvetica,Arial,sans-serif] text-[#F1F1F1];
+}
