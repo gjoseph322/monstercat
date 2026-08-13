@@ -1,4 +1,3 @@
-import React, { useContext } from 'react'
 import { useAudioGlobal } from '../context/AudioContext.js'
 interface MusicVideoProps {
     className?: string;
