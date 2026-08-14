@@ -1,4 +1,3 @@
-import React from 'react'
 import { useAudioGlobal } from '../context/AudioContext.js';
 import Icons from '../../../components/Icons.js';
 import { formatTime } from '../utils/formatTime.js';

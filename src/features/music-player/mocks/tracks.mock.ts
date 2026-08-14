@@ -28,7 +28,7 @@ export const tracks: Track[] = [
         id: "track-1",
         title: "Dreams",
         duration: 372,
-        audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp",
+        audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
         artists: [
             { id: "artist-1", name: "Lost Sky" }
         ],

@@ -113,10 +113,12 @@ export const useAudioPlayer = (queue: Track[]) => {
   } 
 
   const startPlayback = async () => {
-    createPlaybackRequest();
+    const requestId = createPlaybackRequest();
+    if (requestId === null) return;  
     setPlayerState("loading");
     console.log("startPlayback → loading");
     await delay(4000);
+    if (!isSamePlaybackRequest(requestId)) return;
     const started = await play();
     if (!started) {
       setPlayerState("paused");
@@ -139,7 +141,7 @@ export const useAudioPlayer = (queue: Track[]) => {
     if (playerState !== "loading") return;
     const requestId = pendingPlaybackRequest.current;
     if (requestId === null) return;  
-    await delay(2000);
+    await delay(4000);
     if (!isSamePlaybackRequest(requestId)) return;
     pendingPlaybackRequest.current = null;
     const started = await play();

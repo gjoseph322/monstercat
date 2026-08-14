@@ -1,8 +1,7 @@
-import React from 'react'
 import Portada from '../../../components/Portada.js';
 import TrackList from './TrackList.js';
 import MusicVideo from './MusicVideo.js';
-import Footer from '../../../components/Footer.js';
+
 
 interface MusicPlayerProps {
     className?: string;
