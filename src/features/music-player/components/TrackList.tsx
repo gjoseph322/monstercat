@@ -10,7 +10,7 @@ interface TrackListProps {
 
 const TrackList = ({ className }: TrackListProps) => {
 
-    const { queue, currentTrack, PlayerState
+    const { queue, currentTrack, playerState
         , playTrack, isCurrentTrack, effectiveDuration, currentTime
     } = useAudioGlobal();
 
@@ -24,10 +24,10 @@ const TrackList = ({ className }: TrackListProps) => {
     }
 
     const getTrackIcon = (trackId: string) => {
-        console.log("playerState:", PlayerState);
+        console.log("playerState:", playerState);
         if (currentTrack?.id !== trackId) return "play";
-        if (PlayerState === "loading") return "loading";
-        if (PlayerState === "playing") return "pause";
+        if (playerState === "loading") return "loading";
+        if (playerState === "playing") return "pause";
         return "play";
     }
     return (

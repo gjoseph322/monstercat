@@ -8,7 +8,7 @@ interface AudioContextType {
     queue: Track[];
     currentTrack: Track | null | undefined;
     audioRef: React.RefObject<HTMLAudioElement | null> ;
-    PlayerState: PlayerState;
+    playerState: PlayerState;
     currentTime: number; 
     effectiveDuration: number;
     playTrack: (trackId: string) => void;

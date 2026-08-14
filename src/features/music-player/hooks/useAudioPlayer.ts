@@ -7,11 +7,11 @@ import type { PlayerState } from "../types/playerState.type.js";
 export const useAudioPlayer = (queue: Track[]) => {
 
   const [currentTrackId, setCurrentTrackId] = useState<string | null>(null);
-  const [PlayerState, setPlayerState] = useState<PlayerState>("idle");
+  const [playerState, setPlayerState] = useState<PlayerState>("idle");
   const [currentTime, setCurrentTime] = useState(0);
   const [audioDuration, setAudioDuration] = useState<number | null>(null); //duración real de la canción dada por el navegador
 
-  const audioRef = useRef<HTMLAudioElement>(null); // Id de la canción reproducida para los setTimeout y carga del loading
+  const audioRef = useRef<HTMLAudioElement>(null); 
   const playbackRequestCounter = useRef(0); // contador reciende de canción reproducida (para los setTimeout y carga del loading)
   const pendingPlaybackRequest = useRef<number | null>(null);
 
@@ -79,7 +79,7 @@ export const useAudioPlayer = (queue: Track[]) => {
       return;
     }
 
-    switch (PlayerState) {
+    switch (playerState) {
       case "playing":
         pausePlayback();
         break;
@@ -131,12 +131,12 @@ export const useAudioPlayer = (queue: Track[]) => {
 
   const onAudioPause = () => {
     setPlayerState("paused");
-    console.log(PlayerState);
+    console.log(playerState);
   }
 
   const onAudioCanPlay = (async () => {
 
-    if (PlayerState !== "loading") return;
+    if (playerState !== "loading") return;
     const requestId = pendingPlaybackRequest.current;
     if (requestId === null) return;  
     await delay(2000);
@@ -170,7 +170,7 @@ export const useAudioPlayer = (queue: Track[]) => {
   }
   
   const onAudioError =() => {
-    if (PlayerState==="loading") return;
+    if (playerState!=="loading") return;
     setPlayerState("paused");
     pendingPlaybackRequest.current = null;
   }
@@ -183,7 +183,7 @@ export const useAudioPlayer = (queue: Track[]) => {
 
     //Playback
     playTrack,
-    PlayerState,
+    playerState,
 
     //Audio
     audioRef,

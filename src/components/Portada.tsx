@@ -13,13 +13,13 @@ interface PortadaProps {
 
 export const Portada = ({ className = "",
     classNameImg = "", classNameSectionRight = "", classNameSectionleft = "" }: PortadaProps) => {
-    const { currentTrack, PlayerState, playTrack
+    const { currentTrack, playerState, playTrack
 
     } = useAudioGlobal();
     const getTrackIcon = (trackId: string) => {
         if (currentTrack?.id !== trackId) return "play";
-        if (PlayerState === "loading") return "loading";
-        if (PlayerState === "playing") return "pause";
+        if (playerState === "loading") return "loading";
+        if (playerState === "playing") return "pause";
         return "play";
     } 
    

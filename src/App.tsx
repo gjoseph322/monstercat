@@ -1,4 +1,3 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header.js'
 import { AudioProvider } from './features/music-player/context/AudioContext.js';
 import BackgroundLayers from './components/BackgroundLayers.js';

@@ -1,5 +1,4 @@
-// features/music-player/hooks/useMusicPlayer.ts
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import type { Track } from '../types/track.types.js'
 import { MusicService } from '../services/MusicService.js';
 
